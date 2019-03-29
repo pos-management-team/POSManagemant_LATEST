@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSManagemant", "POSManagemant\POSManagemant.csproj", "{F2F2A3A9-4A57-4A70-9B51-711E1BFC5A41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSManagemantDAL", "POSManagemantDAL\POSManagemantDAL.csproj", "{CEA3DEB1-4CFA-4973-9D6A-2BB28B082B35}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2F2A3A9-4A57-4A70-9B51-711E1BFC5A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2F2A3A9-4A57-4A70-9B51-711E1BFC5A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2F2A3A9-4A57-4A70-9B51-711E1BFC5A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2F2A3A9-4A57-4A70-9B51-711E1BFC5A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA3DEB1-4CFA-4973-9D6A-2BB28B082B35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA3DEB1-4CFA-4973-9D6A-2BB28B082B35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA3DEB1-4CFA-4973-9D6A-2BB28B082B35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA3DEB1-4CFA-4973-9D6A-2BB28B082B35}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB8BFCB7-22EC-4C5A-992B-F03C8CEDAA9C}
+	EndGlobalSection
+EndGlobal

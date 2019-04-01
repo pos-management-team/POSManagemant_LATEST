@@ -1,65 +1,48 @@
 ﻿
 @{
-    ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
+<!DOCTYPE html>
 
-<script src="~/Apps/app.js"></script>
-<script src="~/Apps/JSController/LoginController.js"></script>
-<script src="/Apps/JSService/LoginService.js"></script>
+<html ng-app="POSManagement">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Apps/app/app.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Apps/JSController/LoginController.js"></script>
+    <script src="~/Apps/JSService/LoginService.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
 
+    @*<title>Login</title>*@
+</head>
+<body>
 <div class="container" ng-app="POSManagement" ng-controller="LoginController">
     <div class=" w3l-login-form">
         <h2>Login Here</h2>
         @*<form action="#" method="POST">*@
-            <div class=" w3l-form-group">
-                <label>Username</label>
-                <div class="group">
-                    <input id="txtUserName" ng-model="obj.UserName" type="text" class="form-control" placeholder="Username" required="required" />
-                </div>
+        <div class=" w3l-form-group">
+            <label>Username</label>
+            <div class="group">
+                <input id="txtUserName" ng-model="obj.UserName" type="text" class="form-control" placeholder="Username" required="required" />
             </div>
-            <div class=" w3l-form-group">
-                <label>Password</label>
-                <div class="group">
-                    <input id="txtPassword" ng-model="obj.Password" type="password" class="form-control" placeholder="Password" required="required" />
-                </div>
+        </div>
+        <div class=" w3l-form-group">
+            <label>Password</label>
+            <div class="group">
+                <input id="txtPassword" ng-model="obj.Password" type="password" class="form-control" placeholder="Password" required="required" />
             </div>
-            <div class="forgot">
-                <a href="#">Forgot Password?</a>
-                <p><input type="checkbox">Remember Me</p>
-            </div>
-            @*<button type="submit">Login</button>*@
-            <button type="submit" value="Login" ng-click="login(obj.UserName,obj.Password)" style="border-radius:5px;">Login</button>
+        </div>
+        <div class="forgot">
+            <a href="#">Forgot Password?</a>
+            <p><input type="checkbox">Remember Me</p>
+        </div>
+        @*<button type="submit">Login</button>*@
+        <button type="submit" value="Login" ng-click="login(obj.UserName,obj.Password)" style="border-radius:5px;">Login</button>
         @*</form>*@
     </div>
 </div>
-@*<div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12" style="padding:20% 20% 20% 20%;">
-            <div class="row">
-                <div class="class=" col-lg-12 col-md-12 col-sm-12" style="background-color:white;">
-                    <div class="col-lg-3 col-md-3 col-sm-3"></div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <label id="lblUserName">User Name</label>
-                                <input id="txtUserName" ng-model="obj.UserName" type="text" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <label id="lblPassword">Password</label>
-                                <input id="txtPassword" ng-model="obj.Password" type="password" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <button type="button" value="Login" ng-click="login(obj.UserName,obj.Password)">Login</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3"></div>
-                </div>
-            </div>
-        </div>
-    </div>*@
+</body>
+</html>

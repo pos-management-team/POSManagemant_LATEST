@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "T12001";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Apps/JSController/Setups/T12001Controller.js"></script>
+<script src="~/Apps/JSService/Setups/T12001Service.js"></script>
+
+<div ng-app="POSManagement" ng-controller="T12001Controller">
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div>
+            <div class="panel" style="background-color: #f00">
+                <div class="panel-heading panel-heading-01" style="width:100%">
+                    <i class="fa fa-edit fa-fw icon-padding"></i>Company Page
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @*<div class="col-lg-12 col-md-12 col-sm-12">*@
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6" style="margin:0.5% auto; border: 2px solid #e17d7d; border-radius: 5px; padding: 10px">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <label id="lblComTypeName)" associatedcontrolid="txtLogId">Company Name</label>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input id="txtCompanyName" type="text" ng-model="company.Company_Name" class="form-control" style="width: 100%" />
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12" style="padding-top: 8px">
+
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <label id="lblCode" associatedcontrolid="txtCode">Company Code</label>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input id="txtCode" type="text" ng-model="company.Company_Code" class="form-control" style="width: 100%" />
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <label id="lblLogImage" associatedcontrolid="LogImage">Type</label>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 8px">
+                            <select class="form-control" name="right"
+                                    ng-model="company.Comp_Type_ID"
+                                    ng-change="getProductVersions()"
+                                    ng-options="p.Comp_Type_ID as p.Comp_Type_Name for p in DropdownList">
+                                <option value="" selected="selected">Choose one</option>
+                            </select>
+
+                            @*<div class="ng-cloak select-box" style="width:280px">
+                                    <ui-select ng-model="C.selected" id="ddlPat_Religion" theme="select2" ng-disabled="obj.disabled" append-to-body="true" style="width: 100%; ">
+                                        <ui-select-match placeholder="Select">{{$select.selected.Comp_Type_Name}}</ui-select-match>
+                                        <ui-select-choices repeat="C in DropdownList | propsFilter: {Comp_Type_ID: $select.search}">
+                                            <div ng-bind-html="C.Comp_Type_Name | highlight: $select.search"></div>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                    <input type="text" id="ddlVerbalCode" ng-model="company.Comp_Type_ID" ng-bind="company.Comp_Type_ID = C.selected.Comp_Type_ID" />
+
+                                </div>*@
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12" style="padding-top: 8px">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6" style="text-align:right">
+                            <input type="button" value="Save" ng-click="Save_Click(company)" class="btn btn-primary" style="margin-right:25px" />
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+            @*</div>*@
+
+        </div>
+
+        @*<div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="col-lg-2 col-md-2 col-sm-2"></div>
+                <div class="col-lg-8 col-md-8 col-sm-8">
+                    <div>
+                        <input type="text" style="float: right; width: 30%; height: 35px" placeholder="Search...." class="form-control" ng-model="Search" />
+                    </div>
+                    <table class="table table-bordered" arrow-selector>
+                        <tr style="background-color: #C12D2D; color: white; text-align: center">
+                            <th style="width: 20%">Company Name </th>
+                            <th style="width: 40%">Company Type</th>
+                            <th style="width: 40%"> Company Code</th>
+                        </tr>
+
+                        <tr dir-paginate="Z in CompanyList |filter : Search |itemsPerPage:5 |orderBy:'- Comp_Type_ID'" ng-class="{'selected':$index == selectedRow}" ng-click="setClickedRow($index,Z)">
+                            <td style="width: 40%">{{Z.Company_Name}}</td>
+                            <td style="width: 20%">{{Z.Comp_Type_Name}}</td>
+                            <td style="width: 40%">{{Z.Company_Code}}</td>
+
+                        </tr>
+                    </table>
+                    <dir-pagination-controls max-size="5"
+                                             direction-links="true"
+                                             boundary-links="true">
+                    </dir-pagination-controls>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2"></div>
+            </div>
+        </div>*@
+    </div>
+</div>
+

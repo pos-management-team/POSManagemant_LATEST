@@ -14,9 +14,10 @@ namespace POSManagemantDAL.Repository
 {
     public class CommonDAL
     {
-        private SqlTransaction transaction;        
+        private SqlTransaction transaction;
         //readonly SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-8UHSCTS\MASUMSQL;Initial Catalog = POS_Management_DB; User ID = sa; Password=123;");       
-        readonly SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog = POS_Management_DB; User ID = sa; Password=123;");       
+        // readonly SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog = POS_Management_DB; User ID = sa; Password=123;");  
+        readonly SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-PMRTF19\RUHULSQLSERVER;Initial Catalog = POS_Management_DB; User ID = sa; Password=123;");
 
         public void BeginTransaction()
         {

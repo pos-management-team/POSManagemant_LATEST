@@ -11,6 +11,8 @@ namespace POSManagemant.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Ninject.Web.Common.WebHost;
+    using POSManagemantDAL.Repository.Interface.Menu;
+    using POSManagemantDAL.Repository.Implementation.Menu;
 
     public static class NinjectWebCommon 
     {
@@ -46,6 +48,7 @@ namespace POSManagemant.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
                 //kernel.Bind<ILogin>().To<LoginRepository>();
+                kernel.Bind<IMenu>().To<MenuRepository>();
                 RegisterServices(kernel);
                 return kernel;
             }

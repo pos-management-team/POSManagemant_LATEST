@@ -165,7 +165,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CommonDAL.cs" />
     <Compile Include="Repository\DAL\LoginDAL.cs" />
+    <Compile Include="Repository\Implementation\Menu\MenuRepository.cs" />
     <Compile Include="Repository\Interface\ILogin.cs" />
+    <Compile Include="Repository\Interface\Menu\IMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\Model1.edmx">
@@ -190,12 +192,10 @@
     <Folder Include="Repository\DAL\Reports\" />
     <Folder Include="Repository\DAL\Setups\" />
     <Folder Include="Repository\DAL\Transaction\" />
-    <Folder Include="Repository\Implementation\Menu\" />
     <Folder Include="Repository\Implementation\Query\" />
     <Folder Include="Repository\Implementation\Reports\" />
     <Folder Include="Repository\Implementation\Setups\" />
     <Folder Include="Repository\Implementation\Transaction\" />
-    <Folder Include="Repository\Interface\Menu\" />
     <Folder Include="Repository\Interface\Query\" />
     <Folder Include="Repository\Interface\Reports\" />
     <Folder Include="Repository\Interface\Setups\" />

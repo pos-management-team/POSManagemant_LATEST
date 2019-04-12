@@ -12,7 +12,7 @@
 
                 } else {
                     var a = $location.absUrl().split('/')[2].split('?')[0];
-                    window.location.href = "http://" + a + "/Menu/Index";
+                    window.location.href = "http://" + a + "/Menu/Menu";
                 }
 
             });

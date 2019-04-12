@@ -38,10 +38,20 @@
     <script src="/Scripts/Menu/custom.js"></script>
     <link href="/Content/Menu/custom.css" rel="stylesheet">
     <!--//Metis Menu -->
-
+    <script src="~/Apps/JSController/Menu/MenuController.js"></script>
+    <script src="~/Apps/JSService/Menu/MenuService.js"></script>
 </head>
+<style>
+    .container {
+        width: 100% !important;
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+        margin-right: 0px !important;
+        margin-left: auto !important;
+    }
+</style>
 <body>
-<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1" ng-app="POSManagement" ng-controller="MenuController">
     <!--left-fixed -navigation-->
     <aside class="sidebar-left">
         <nav class="navbar navbar-inverse">
@@ -112,11 +122,13 @@
 <div class="sticky-header header-section ">
     <div class="header-left">
         <!--toggle button start-->
-        <button id="showLeftPush"><i class="fa fa-bars"></i></button>			<!--toggle button end-->
+        <button id="showLeftPush">
+        @*<i class="fa fa-bars"></i>*@
+            </button>			<!--toggle button end-->
     </div>
 </div>
 
-<div class="container body-content">
+<div class="container">
     @RenderBody()
     <hr />
     @*<footer>
@@ -125,23 +137,23 @@
 </div>
 <script src="/Scripts/Menu/classie.js"></script>
 <script>
-    var menuLeft = document.getElementById('cbp-spmenu-s1'),
-        showLeftPush = document.getElementById('showLeftPush'),
-        body = document.body;
+    //var menuLeft = document.getElementById('cbp-spmenu-s1'),
+    //    showLeftPush = document.getElementById('showLeftPush'),
+    //    body = document.body;
 
-    showLeftPush.onclick = function () {
-        classie.toggle(this, 'active');
-        classie.toggle(body, 'cbp-spmenu-push-toright');
-        classie.toggle(menuLeft, 'cbp-spmenu-open');
-        disableOther('showLeftPush');
-    };
+    //showLeftPush.onclick = function () {
+    //    classie.toggle(this, 'active');
+    //    classie.toggle(body, 'cbp-spmenu-push-toright');
+    //    classie.toggle(menuLeft, 'cbp-spmenu-open');
+    //    disableOther('showLeftPush');
+    //};
 
 
-    function disableOther(button) {
-        if (button !== 'showLeftPush') {
-            classie.toggle(showLeftPush, 'disabled');
-        }
-    }
+    //function disableOther(button) {
+    //    if (button !== 'showLeftPush') {
+    //        classie.toggle(showLeftPush, 'disabled');
+    //    }
+    //}
 </script>
 <!-- //Classie --><!-- //for toggle left push menu script -->
 <!--scrolling js-->

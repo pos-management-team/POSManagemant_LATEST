@@ -7,31 +7,28 @@ using System.Web.Mvc;
 
 namespace POSManagemant.Controllers.Menu
 {
-    public class MenuController : Controller
+    public class MenusController : Controller
     {
-        //private readonly IMenu repository;
+        public MenusController(){}
+         IMenu repository;     
 
-       // public MenuController()
-       // {
-           
-       //// repository = ObjectIRepository;
-       // }
+        public MenusController(IMenu ObjectIRepository)
+        {
 
-
-        // GET: Menu
-        public ActionResult Menu()
+             repository = ObjectIRepository;
+        }
+        // GET: Menus
+        public ActionResult Index()
         {
             return View();
         }
-
-
-
-        public ActionResult  GetMenulist()
+        [HttpGet]
+        public ActionResult GetMenulist()
         {
-           
-        var Data = "";
-           // var Data = repository.GetMenulist();
-           
+
+            //var Data = "";
+            var Data = repository.GetMenulist();
+
             //string JSONstring = string.Empty;
             //JSONstring = JsonConvert.SerializeObject(CheckLoginData);
 

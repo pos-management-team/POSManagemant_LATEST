@@ -1028,7 +1028,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\Menu\MenuController.cs" />
-    <Compile Include="Controllers\Menu\MenusController.cs" />
     <Compile Include="Controllers\Setups\SetupController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

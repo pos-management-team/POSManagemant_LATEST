@@ -5,7 +5,7 @@
     return dataSvc;
     function getMenulist() {
         try {
-            var url = '/Menus/GetMenulist';
+            var url = '/Menu/GetMenulist';
             return $http({
                 url: url,
                 method: "POST",

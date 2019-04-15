@@ -1,12 +1,16 @@
 ﻿
 app.controller("MenuController", ["$scope", "MenuService", "$location",
     function ($scope, MenuService, $location) { //$location,
-       // $scope.obj = {};
-
+        // $scope.obj = {};
+        $scope.setup = false;
         var menu = MenuService.getMenulist();
         menu.then(function (data) {
-            var menulist = data;
+            $scope.menulist = data;
         });
+        $scope.Setup_Click = function () {
+            $scope.setup = true;
+        };
+
         //function login(l, p) {
         //    var loginData = LoginService.CheckLogin(l, p);
         //    loginData.then(function (data) {

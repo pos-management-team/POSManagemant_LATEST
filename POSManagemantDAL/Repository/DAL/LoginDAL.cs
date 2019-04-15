@@ -12,5 +12,10 @@ namespace POSManagemantDAL.Repository.DAL
         {
             return Query($"Select * from t00000 where T_USER_ID ='{userid}' and T_PASSWORD='{password}'");
         }
+
+        public DataTable GetMenudata()
+        {
+            return Query($"select * from T00001");
+        }
     }
 }

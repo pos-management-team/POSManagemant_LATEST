@@ -1,6 +1,7 @@
 ﻿app.service("LoginService", ["$http", function ($http) {
     var dataSvc = {
-        CheckLogin: CheckLogin
+        CheckLogin: CheckLogin,
+       // getMenudata: getMenudata
     };
     return dataSvc;    
 
@@ -20,5 +21,21 @@
             throw ex;
         }
     }
+    //function getMenudata() {
+    //    try {
+    //        var url = '/Login/GetMenudata';
+    //        return $http({
+    //            url: url,
+    //            method: "POST",
+    //            data: {}
+    //        }).then(function (results) {
+    //            return results.data;
+    //        }).catch(function (ex) {
+    //            throw ex;
+    //        });
+    //    } catch (ex) {
+    //        throw ex;
+    //    }
+    //}
 }
 ]);

@@ -28,6 +28,8 @@ namespace POSManagemantDAL.Repository
             }
         }
 
+        
+
         public void CommitTransaction()
         {
             transaction.Commit();

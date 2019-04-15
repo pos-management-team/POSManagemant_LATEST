@@ -3,6 +3,7 @@ using POSManagemantDAL.Repository.Interface.Menu;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Linq;
@@ -10,15 +11,16 @@ using System.Web;
 
 namespace POSManagemantDAL.Repository.Implementation.Menu
 {
-    public class MenuRepository: IMenu
+    public class MenuRepository 
     {
-        private POS_Management_DBEntities obj = new POS_Management_DBEntities();
-        public  IEnumerable GetMenulist()
+        private POS_Management_DBEntities1 obj = new POS_Management_DBEntities1();
+        public IEnumerable GetMenulist()
         {
+            //var query;
             IEnumerable query = Enumerable.Empty<object>();
             try
             {
-                query = (from i in obj.T00001
+               query = (from i in obj.T00001
                          select new
                          {
                             T_FORM_TYPE= i.T_FORM_TYPE,
@@ -68,5 +70,11 @@ namespace POSManagemantDAL.Repository.Implementation.Menu
         {
             obj.Dispose();
         }
+
+        //public DataTable GetMenulist()
+        //{
+       
+        //    return Query($"select * from T00001");
+        //}
     }
 }

@@ -34,13 +34,27 @@
 
     <!-- Metis Menu -->
     <script src="/Scripts/Menu/metisMenu.min.js"></script>
+    <script src="~/Apps/app/app.js"></script>
     <script src="/Scripts/Menu/custom.js"></script>
     <link href="/Content/Menu/custom.css" rel="stylesheet">
     <!--//Metis Menu -->
-
+    @*<script src="~/Apps/JSController/Menu/MenuController.js"></script>
+    <script src="~/Apps/JSService/Menu/MenuService.js"></script>*@
+    <script src="~/Apps/JSController/LoginController.js"></script>
+    <script src="~/Apps/JSService/LoginService.js"></script>
 </head>
+<style>
+    .container {
+        width: 100% !important;
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+        margin-right: 0px !important;
+        margin-left: auto !important;
+    }
+</style>
 <body>
-<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1" ng-app="POSManagement" ng-controller="MenuController">
+  
     <!--left-fixed -navigation-->
     <aside class="sidebar-left">
         <nav class="navbar navbar-inverse">
@@ -52,32 +66,44 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>*@
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            @*<div ng-repeat="a in menulist">
+                <div style="color:white" ng-click="Setup_Click()">Setup</div>
+                <div style="color:white" ng-show="setup">
+                    <ul class="treeview-menu">
+                        <li><a href="http://localhost:49843/Setup/T12001"><i class="fa fa-angle-right"></i>{{a.T_NAME}}</a></li>                        
+                    </ul>
+                   
+                </div>
+            </div>*@
+            @*<div ng-repeat="a in menulist">*@
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
                 <ul class="sidebar-menu">
-                    <li class="treeview">
+                    <li class="treeview" >
                         <a href="#">
                             <i class="fa fa-laptop"></i>
                             <span>Transaction</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu">
-                            <li><a href="grids.html"><i class="fa fa-angle-right"></i> Transaction1</a></li>
-                            <li><a href="media.html"><i class="fa fa-angle-right"></i> Transaction2</a></li>
+                        <ul class="treeview-menu" ng-repeat="a in menulist">
+                            <li><a href="http://localhost:49843/Setup/T12001"><i class="fa fa-angle-right"></i>{{a.T_NAME}}</a></li>
+                            @*<li><a href="media.html"><i class="fa fa-angle-right"></i>Transaction2 </a></li>*@
                         </ul>
                     </li>
-                    <li class="treeview">
-                    <li class="treeview">
-                        <a href="#">
+                   
+                    <li class="treeview" >
+                        <a href="">
                             <i class="fa fa-laptop"></i>
                             <span>Setups</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu">
-                            <li><a href="general.html"><i class="fa fa-angle-right"></i>Setup1</a></li>
-                            <li><a href="icons.html"><i class="fa fa-angle-right"></i>Setup2</a></li>
-                            <li><a href="buttons.html"><i class="fa fa-angle-right"></i>Setup3</a></li>
-                            <li><a href="typography.html"><i class="fa fa-angle-right"></i> Setup4</a></li>
-                        </ul>
+                       
+                            <ul class="treeview-menu" ng-repeat="a in menulist">
+                                <li><a href="http://localhost:49843/Setup/T12001">{{a.T_NAME}}</a></li>
+                                @*<li><a href="icons.html"><i class="fa fa-angle-right"></i>Setups2</a></li>
+                                <li><a href="buttons.html"><i class="fa fa-angle-right"></i>Setups3</a></li>
+                                <li><a href="typography.html"><i class="fa fa-angle-right"></i> Setups4</a></li>*@
+                            </ul>
+                        
                     </li>
 
                     <li class="treeview">
@@ -99,23 +125,32 @@
                             <li><a href="tables.html"><i class="fa fa-angle-right"></i>Reports1</a></li>
                             <li><a href="tables.html"><i class="fa fa-angle-right"></i>Reports2</a></li>
                         </ul>
+                        
                     </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
+            @*</div>*@
         </nav>
     </aside>
+    <div ng-repeat="a in menulist">
+        <div>{{a.T_NAME}}</div>
+        <div>ruhul</div>
+    </div>
 </div>
 <!--left-fixed -navigation-->
 <!-- header-starts -->
 <div class="sticky-header header-section ">
     <div class="header-left">
         <!--toggle button start-->
-        <button id="showLeftPush"><i class="fa fa-bars"></i></button>			<!--toggle button end-->
+        <button id="showLeftPush">
+        @*<i class="fa fa-bars"></i>*@
+            </button>			<!--toggle button end-->
     </div>
 </div>
 
-<div class="container body-content">
+<div class="container">
     @RenderBody()
     <hr />
     @*<footer>
@@ -124,23 +159,23 @@
 </div>
 <script src="/Scripts/Menu/classie.js"></script>
 <script>
-    var menuLeft = document.getElementById('cbp-spmenu-s1'),
-        showLeftPush = document.getElementById('showLeftPush'),
-        body = document.body;
+    //var menuLeft = document.getElementById('cbp-spmenu-s1'),
+    //    showLeftPush = document.getElementById('showLeftPush'),
+    //    body = document.body;
 
-    showLeftPush.onclick = function () {
-        classie.toggle(this, 'active');
-        classie.toggle(body, 'cbp-spmenu-push-toright');
-        classie.toggle(menuLeft, 'cbp-spmenu-open');
-        disableOther('showLeftPush');
-    };
+    //showLeftPush.onclick = function () {
+    //    classie.toggle(this, 'active');
+    //    classie.toggle(body, 'cbp-spmenu-push-toright');
+    //    classie.toggle(menuLeft, 'cbp-spmenu-open');
+    //    disableOther('showLeftPush');
+    //};
 
 
-    function disableOther(button) {
-        if (button !== 'showLeftPush') {
-            classie.toggle(showLeftPush, 'disabled');
-        }
-    }
+    //function disableOther(button) {
+    //    if (button !== 'showLeftPush') {
+    //        classie.toggle(showLeftPush, 'disabled');
+    //    }
+    //}
 </script>
 <!-- //Classie --><!-- //for toggle left push menu script -->
 <!--scrolling js-->

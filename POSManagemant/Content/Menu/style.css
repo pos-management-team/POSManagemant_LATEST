@@ -94,7 +94,9 @@ span.dashboard_text {
 }
 /* ----menu-icon----*/
 button#showLeftPush {
-    font-size: 1.1em;
+    background: #8aa4af;
+    height: 50px;
+    /*font-size: 1.1em;
     text-align: center;
     cursor: pointer;
     float: left;
@@ -108,7 +110,7 @@ button#showLeftPush {
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    margin-top: 11px;
+    margin-top: 11px;*/
 }
 button#showLeftPush:hover {
     color: #eee;

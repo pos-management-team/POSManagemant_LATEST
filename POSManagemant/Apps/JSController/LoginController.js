@@ -11,8 +11,18 @@
                     alert(msg);                    
 
                 } else {
+                    //var menu = LoginService.getMenudata();
+                    //menu.then(function (d) {
+                    //    var dd = JSON.parse(d);
+                       
+                    //    if (dd.length > 0) {
+                    //       $scope.menulist = dd;
+                    //var a = $location.absUrl().split('/')[2].split('?')[0];
+                    //window.location.href = "http://" + a + "/Menu/Menu";
+                    //    }
+                    //})
                     var a = $location.absUrl().split('/')[2].split('?')[0];
-                    window.location.href = "http://" + a + "/Menu/Index";
+                    window.location.href = "http://" + a + "/Menu/Menu";
                 }
 
             });

@@ -90,7 +90,7 @@ p.w3l-register-p {
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    border: none;
+    /*border: none;*/
     box-sizing: border-box;
     background: transparent;
     color: #000;

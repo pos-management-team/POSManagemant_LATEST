@@ -11,21 +11,25 @@ using System.Web;
 
 namespace POSManagemantDAL.Repository.Implementation.Menu
 {
-    public class MenuRepository 
+    public class MenuRepository :IMenu
     {
         private POS_Management_DBEntities1 obj = new POS_Management_DBEntities1();
+        public MenuRepository(POS_Management_DBEntities1 _obj)
+        {
+            obj = _obj;
+        }
         public IEnumerable GetMenulist()
         {
             //var query;
             IEnumerable query = Enumerable.Empty<object>();
             try
             {
-               query = (from i in obj.T00001
+                query = (from i in obj.T00001
                          select new
                          {
-                            T_FORM_TYPE= i.T_FORM_TYPE,
-                            T_FORM_NAME= i.T_FORM_NAME,
-                            T_NAME= i.T_NAME
+                             T_FORM_TYPE = i.T_FORM_TYPE,
+                             T_FORM_NAME = i.T_FORM_NAME,
+                             T_NAME = i.T_NAME
                          }).ToList();
                 //query = (from i in obj.T74015
                 //         join j in obj.T74004

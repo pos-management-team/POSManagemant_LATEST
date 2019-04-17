@@ -17,5 +17,9 @@ namespace POSManagemant.Controllers.Setups
         {
             return View();
         }
+        public ActionResult T12003()
+        {
+            return View();
+        }
     }
 }

@@ -38,10 +38,10 @@
     <script src="/Scripts/Menu/custom.js"></script>
     <link href="/Content/Menu/custom.css" rel="stylesheet">
     <!--//Metis Menu -->
-    @*<script src="~/Apps/JSController/Menu/MenuController.js"></script>
-    <script src="~/Apps/JSService/Menu/MenuService.js"></script>*@
-    <script src="~/Apps/JSController/LoginController.js"></script>
-    <script src="~/Apps/JSService/LoginService.js"></script>
+    <script src="~/Apps/JSController/Menu/MenuController.js"></script>
+    <script src="~/Apps/JSService/Menu/MenuService.js"></script>
+    @*<script src="~/Apps/JSController/LoginController.js"></script>
+    <script src="~/Apps/JSService/LoginService.js"></script>*@
 </head>
 <style>
     .container {
@@ -84,8 +84,8 @@
                             <span>Transaction</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu" ng-repeat="a in menulist">
-                            <li><a href="http://localhost:49843/Setup/T12001"><i class="fa fa-angle-right"></i>{{a.T_NAME}}</a></li>
+                        <ul class="treeview-menu" ng-repeat="a in menulist" ng-if="a.T_FORM_TYPE == 'Transaction'">
+                            <li><a href="http://localhost:49843/{{a.T_FORM_TYPE}}/{{a.T_FORM_NAME}}"><i class="fa fa-angle-right"></i>{{a.T_NAME}}</a></li>
                             @*<li><a href="media.html"><i class="fa fa-angle-right"></i>Transaction2 </a></li>*@
                         </ul>
                     </li>
@@ -97,8 +97,8 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                        
-                            <ul class="treeview-menu" ng-repeat="a in menulist">
-                                <li><a href="http://localhost:49843/Setup/T12001">{{a.T_NAME}}</a></li>
+                            <ul class="treeview-menu" ng-repeat="a in menulist" ng-if="a.T_FORM_TYPE == 'Setup'">
+                                <li><a href="http://localhost:49843/{{a.T_FORM_TYPE}}/{{a.T_FORM_NAME}}"><i class="fa fa-angle-right"></i>{{a.T_NAME}}</a></li>
                                 @*<li><a href="icons.html"><i class="fa fa-angle-right"></i>Setups2</a></li>
                                 <li><a href="buttons.html"><i class="fa fa-angle-right"></i>Setups3</a></li>
                                 <li><a href="typography.html"><i class="fa fa-angle-right"></i> Setups4</a></li>*@

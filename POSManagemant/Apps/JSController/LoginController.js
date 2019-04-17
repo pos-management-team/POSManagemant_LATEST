@@ -28,10 +28,10 @@
             });
         }
 
-        
-        $scope.login = function (l, p) {
+
+        $scope.login = function(l, p) {
             login(l, p);
-        }
+        };
 
 
     }]);

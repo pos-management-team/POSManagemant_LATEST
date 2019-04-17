@@ -1,24 +1,31 @@
-﻿using POSManagemantDAL.Repository.Implementation.Menu;
+﻿
 using POSManagemantDAL.Repository.Interface.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 using System.Web.Mvc;
 
 namespace POSManagemant.Controllers.Menu
 {
     public class MenuController : Controller
     {
-        MenuRepository repository = new MenuRepository();
-        //private readonly IMenu repository;
+        // MenuRepository repository = new MenuRepository();
+        private IMenu repository;
 
         //public MenuController(IMenu ObjectIRepository)
         //{
-
-        //     repository = ObjectIRepository;
+        //    repository = ObjectIRepository;
         //}
+        //public MenuController()
+        //{
 
+        //}
+        public MenuController(IMenu ObjectIRepository)
+        {
+            repository = ObjectIRepository;
+        }
 
         // GET: Menu
         public ActionResult Menu()
@@ -28,12 +35,12 @@ namespace POSManagemant.Controllers.Menu
 
 
 
-        public ActionResult  GetMenulist()
+        public ActionResult GetMenulist()
         {
-           
-      //  var Data = "";
+
+            //  var Data = "";
             var Data = repository.GetMenulist();
-           
+
             //string JSONstring = string.Empty;
             //JSONstring = JsonConvert.SerializeObject(CheckLoginData);
 

@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
+<html ng-app="POSManagement">
+<head >
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="~/Apps/app.js"></script>
+    @*<script src="~/Apps/app.js"></script>*@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/angular.min.js"></script>
@@ -52,8 +52,8 @@
         margin-left: auto !important;
     }
 </style>
-<body>
-<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1" ng-app="POSManagement" ng-controller="MenuController">
+<body >
+<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1"  ng-controller="MenuController">
   
     <!--left-fixed -navigation-->
     <aside class="sidebar-left">
@@ -134,10 +134,10 @@
             @*</div>*@
         </nav>
     </aside>
-    <div ng-repeat="a in menulist">
+    @*<div ng-repeat="a in menulist">
         <div>{{a.T_NAME}}</div>
         <div>ruhul</div>
-    </div>
+    </div>*@
 </div>
 <!--left-fixed -navigation-->
 <!-- header-starts -->
@@ -158,25 +158,6 @@
             </footer>*@
 </div>
 <script src="/Scripts/Menu/classie.js"></script>
-<script>
-    //var menuLeft = document.getElementById('cbp-spmenu-s1'),
-    //    showLeftPush = document.getElementById('showLeftPush'),
-    //    body = document.body;
-
-    //showLeftPush.onclick = function () {
-    //    classie.toggle(this, 'active');
-    //    classie.toggle(body, 'cbp-spmenu-push-toright');
-    //    classie.toggle(menuLeft, 'cbp-spmenu-open');
-    //    disableOther('showLeftPush');
-    //};
-
-
-    //function disableOther(button) {
-    //    if (button !== 'showLeftPush') {
-    //        classie.toggle(showLeftPush, 'disabled');
-    //    }
-    //}
-</script>
 <!-- //Classie --><!-- //for toggle left push menu script -->
 <!--scrolling js-->
 <script src="/Scripts/Menu/jquery.nicescroll.js"></script>

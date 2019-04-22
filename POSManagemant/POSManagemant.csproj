@@ -46,7 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>bin\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
@@ -119,9 +119,11 @@
     <Content Include="Apps\JSController\LoginController.js" />
     <Content Include="Apps\JSController\Menu\MenuController.js" />
     <Content Include="Apps\JSController\Setups\T12001Controller.js" />
+    <Content Include="Apps\JSController\Setups\T12003Controller.js" />
     <Content Include="Apps\JSService\LoginService.js" />
     <Content Include="Apps\JSService\Menu\MenuService.js" />
     <Content Include="Apps\JSService\Setups\T12001Service.js" />
+    <Content Include="Apps\JSService\Setups\T12003Service.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -1032,6 +1034,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\Menu\MenuController.cs" />
     <Compile Include="Controllers\Setups\SetupController.cs" />
+    <Compile Include="Controllers\Setups\T12003Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1076,6 +1079,7 @@
     <Folder Include="Views\Query\" />
     <Folder Include="Views\Reports\" />
     <Folder Include="Views\Setups\" />
+    <Folder Include="Views\T12003\" />
     <Folder Include="Views\Transaction\" />
   </ItemGroup>
   <ItemGroup>

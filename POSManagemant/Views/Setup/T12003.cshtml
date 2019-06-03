@@ -5,7 +5,7 @@
 }
 <style>
     body {
-        text-align: center !important;
+        /*text-align: center !important;*/
     }
 
     input[type="text"] {
@@ -16,50 +16,35 @@
     .dis {
         display: inline-block
     }
+
     .botmar {
         margin-bottom: 2%;
     }
 </style>
 
-<div style="margin: 2%; display: inline-block; border: solid lightsalmon; padding: 1%;">
-    @*<table style="border:  solid lightseagreen">
-            <tr>
-                <td>
-                    <label>Product Id</label>
-                </td>
-                <td>
-                    <input id="txtProductId" type="text" class="form-control" />
-                </td>
-                <td>
-                    <label>Product Name</label>
-                </td>
-                <td>
-                    <input id="txtProductId" type="text" class="form-control" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input id="txtProductId" type="text" class="form-control"  />
-                </td>
-            </tr>
-        </table>*@
-    <div class="botmar">
-        <div class="dis">
+<div ng-app="POSManagement" ng-controller="T12003Controller" style="width: 1152px; margin-left: -27px;">
+    <div class="row">
+        <div class="col-md-3 col-lg-3"></div>
+        <div class="col-md-4 col-lg-4">
             <label>Product Id</label>
         </div>
-        <div class="dis">
+        <div class="col-md-2 col-lg-2">
             <input id="txtProductId" type="text" class="form-control" />
         </div>
+        <div class="col-md-3 col-lg-3"></div>
     </div>
-    <div class="botmar">
-        <div class="dis">
+
+    <div class="row">
+        <div class="col-md-3 col-lg-3"></div>
+        <div class="col-md-3 col-lg-3">
             <label>Product Id</label>
         </div>
-        <div class="dis">
+        <div class="col-md-3 col-lg-3">
             <input id="txtProductId" type="text" class="form-control" />
         </div>
+        <div class="col-md-3 col-lg-3"></div>
     </div>
-    
+
 
 
 </div>

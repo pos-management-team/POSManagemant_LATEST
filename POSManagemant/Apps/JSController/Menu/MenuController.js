@@ -1,5 +1,4 @@
-﻿
-app.controller("MenuController", ["$scope", "MenuService", "$location",
+﻿app.controller("MenuController", ["$scope", "MenuService", "$location",
     function ($scope, MenuService, $location) { //$location,
         // $scope.obj = {};
         $scope.setup = false;
